@@ -2,19 +2,152 @@
 @use "breakpoint" as m;
 
 body {
-    background: url(/src/img/negative-space-black-forest-dawn.jpg) no-repeat;
+    background: url(/src/img/negative-space-black-forest-dawn.jpg);
+    background-position: center center;
+    background-attachment: fixed;
     background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.burger {
+    @include m.md{
+        display: none;
+    }
+    @include m.lg{
+        display: none;
+    }
+    @include m.xl{
+        display: none;
+    }
+}
+
+main {
+    text-align: center;
+    width: 100%;
+    transform: translateY(50%);
+    @include m.md{
+        display: none;
+    }
+    @include m.lg{
+        display: none;
+    }
+    @include m.xl{
+        display: none;
+    }
+}
+
+  h1 {
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 2.5em;
+  }
+  
+  #toggle {
+    display: none;
+  }
+  
+  /**
+    Hamburger
+  **/
+  .hamburger {
+    position: absolute;
+    top: 3.5em;
+    right: 10%;
+    margin-left: -2em;
+    margin-top: -45px;
+    width: 2em;
+    height: 45px;
+    z-index: 5;
+  }
+  
+  .hamburger div {
+    position: relative;
+    width: 3em;
+    height: 7px;
+    border-radius: 3px;
+    background-color: white;
+    margin-top: 8px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /**
+  Nav Styles
+  **/
+  .nav {
+    width: 100%;
+    height: 25%;
+    background-color: rgba(235, 235, 235, 0.233);
+    top: -100%; left: 0; right: 0; bottom: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    transform: scale(0);
+  }
+  .nav-wrapper {
+    position: relative;
+    overflow: hidden;
+    overflow-y: auto;
+    height: 100%;
+  }
+  nav {
+    text-align: center;
+  }
+  nav a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+    display: inline-block;
+    margin-top: 1.25em;
+    transition: color 0.2s ease-in-out;
+    letter-spacing: 1px;
+  }
+  nav a:before {
+    content: '';
+    height: 0;
+    position: absolute;
+    width: 0.25em;
+    background-color: white;
+    left: -0.5em;
+    transition: all 0.2s ease-in-out;
+  }
+
+  /**
+  Animations
+  **/
+  #toggle:checked + .hamburger .top-bun {
+    transform: rotate(-45deg);
+    margin-top: 25px;
+  }
+  #toggle:checked + .hamburger .bottom-bun {
+    opacity: 0;
+    transform: rotate(45deg);
+  }
+  #toggle:checked + .hamburger .meat {
+    transform: rotate(45deg);
+    margin-top: -7px;
+  }
+  
+  #toggle:checked + .hamburger + .nav {
+    top: 0;
+    transform: scale(1);
+  }
+
+
+
+/* body {
+    background: url(/src/img/negative-space-black-forest-dawn.jpg) no-repeat;
+    background-size:cover;
     height: 100vh;
 }
 
 
 nav {
     width: 100%;
-    height: 100px;
+    height: 80px;
     background-color: rgba(235, 235, 235, 0.103);
         ul {
             text-align: right;
-            padding-right: 25px;
+            padding-right: 100px;
                 li {
                     list-style: none;
                     display: inline-block;
@@ -22,9 +155,40 @@ nav {
                             display: block;
                             text-decoration: none;
                             color: white;
-                            font-size: 35px;
+                            font-size: 25px;
                             padding: 25px;
                         }
                 }
         }
-}
+} */
+
+main {
+    text-align: center;
+    color: white;
+        h1 {
+            padding: 0;
+            
+            @include m.md{
+                padding-top: 450px;
+                font-size: 35px;
+            }
+            @include m.lg{
+                padding-top: 450px;
+                font-size: 35px;
+            }
+            @include m.xl{
+                padding-top: 450px;
+                font-size: 35px;
+            }
+        }
+        .text1 {
+            padding: 50px;
+            font-weight: lighter;
+            font-size: 25px;
+        }
+        .text2 {
+            padding: 5px;
+            font-weight: lighter;
+            font-size: 25px;
+        }
+}   
