@@ -26,13 +26,18 @@
             max-width: 70%;
             border-radius: 50%;
             box-shadow: 0 0 30px rgb(75, 75, 75);
+
         }
 }      
 
 .card {
     text-align: center;
-        
 }
+
+figure {
+    padding-bottom: 40px;
+}
+
 figcaption {
     background-color: rgba(219, 219, 219, 0.877);
     width: 350px;
