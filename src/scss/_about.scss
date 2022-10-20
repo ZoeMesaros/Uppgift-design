@@ -2,10 +2,6 @@
 @use "breakpoint" as m;
 
 #about {
-/*   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0 auto; */
   @include m.md {
     width: 90%;
     margin: 0 auto;
@@ -22,18 +18,7 @@
     justify-content: space-around;
     flex-flow: wrap;
   }
-  @include m.xl{
-    width: 90%;
-    margin: 0 auto;
-    display: flex; 
-    flex-direction: row;
-    justify-content: space-around;
-    flex-flow: wrap;
-  }
         h3 {
-          @include m.xs{
-            flex-wrap: nowrap;
-          }
           @include m.sm{
             flex-wrap: nowrap;
           }
@@ -49,7 +34,7 @@
         }
 }      
 
-.laget {
+#laget {
     text-align: center;
     font-size: 45px;
     padding-top: 20px;
@@ -63,10 +48,6 @@
       @include m.lg{
         font-size: 30px;
       }
-      @include m.xl{
-        font-size: 30px;
-      }
-    
 }
 
 figure {
@@ -75,9 +56,6 @@ figure {
 }
 
 .card {
-  @include m.xs{
-    width: 100%;
-  }
   @include m.sm{
     width: 100%;
   }
@@ -85,9 +63,6 @@ figure {
     width: 50%;
   }
   @include m.lg{
-    width: 50%;
-  }
-  @include m.xl{
     width: 50%;
   }
 }

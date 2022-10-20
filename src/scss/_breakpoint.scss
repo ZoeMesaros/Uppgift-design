@@ -1,13 +1,6 @@
 @use "variables" as v;
 
 
-@mixin xs {
-    @media (min-width: map-get(v.$breakpoints, "xs")) {
-      @content;
-
-    }
-}
-
 @mixin sm {
     @media (min-width: map-get(v.$breakpoints, "sm")) {
       @content;
@@ -26,30 +19,4 @@
 
     }
 }
-
-@mixin xl {
-    @media (min-width: map-get(v.$breakpoints, "xl")) {
-      @content;
-
-    }
-}
-
-.responsive-test{
-    @include xs {
-        background-color: rgb(253, 0, 55);
-    }
-    @include sm {
-        background-color: aqua;
-    }
-    @include md {
-        background-color: rgb(255, 0, 242);
-    }
-    @include lg {
-        background-color: rgb(7, 176, 255);
-    }
-    @include xl {
-        background-color: rgb(233, 10, 22);
-    }
-}
-
 
