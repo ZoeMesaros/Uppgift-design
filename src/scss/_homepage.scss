@@ -9,7 +9,6 @@
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  position: relative;
 }
 
 .side-menu {
@@ -41,7 +40,7 @@
   .nav {
     position: absolute;
     width: 100%;
-    height: 20%;
+    height: 18%;
     background-color: #ffffff42;
     top: -100%;
     left: 0;
@@ -65,7 +64,7 @@
   }
   nav {
     text-align: center;
-    margin-top: 95px;
+    margin-top: 70px;
   }
   nav a {
     position: relative;
@@ -208,22 +207,22 @@ main {
 .icon {
   width: 100%;
   text-align: center;
-  color: white;
-  padding-top: 700px;
-  transform: translateY(80x);
-  @include m.md {
-    transform: translateY(220px);
-  }
-  @include m.lg {
-    transform: translateY(220px);
-  }
   .arrow {
+    transform: translateY(75vh);
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    color: white;
+    color: rgb(255, 255, 255);
     width: 30px;
     height: 30px;
+    @include m.md {
+      transform: translateY(85vh);
+      color: rgb(255, 255, 255);
+    }
+    @include m.lg {
+      transform: translateY(85vh);
+      color: rgb(255, 255, 255);
+    }
   }
 }
