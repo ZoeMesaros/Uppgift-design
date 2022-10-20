@@ -1,7 +1,7 @@
 @use "variables" as v;
 @use "breakpoint" as m;
 
-#about {
+#laget {
   @include m.md {
     width: 90%;
     margin: 0 auto;
@@ -30,7 +30,7 @@
   }
 }
 
-#laget {
+#about {
   text-align: center;
   font-size: 45px;
   padding-top: 20px;
