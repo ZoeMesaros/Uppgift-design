@@ -32,7 +32,7 @@
     width: 3em;
     height: 7px;
     border-radius: 3px;
-    background-color: #ffffff;
+    background-color: v.$white;
     margin-top: 8px;
     transition: all 0.3s ease-in-out;
   }
@@ -41,7 +41,7 @@
     position: absolute;
     width: 100%;
     height: 18%;
-    background-color: #ffffff42;
+    background-color: v.$grey;
     top: -100%;
     left: 0;
     right: 0;
@@ -54,7 +54,7 @@
     width: 100%;
     height: 80px;
     transform: translateY(-60px);
-    background-color: rgba(255, 255, 255, 0.158);
+    background-color: v.$grey;
   }
   .nav-wrapper {
     position: relative;
@@ -69,7 +69,7 @@
   nav a {
     position: relative;
     text-decoration: none;
-    color: #ffffff;
+    color: v.$white;
     font-size: 1.5em;
     margin-top: 1.25em;
     transition: color 0.2s ease-in-out;
@@ -80,7 +80,7 @@
     height: 0;
     position: absolute;
     width: 0.25em;
-    background-color: white;
+    background-color: v.$white;
     left: -0.5em;
     transition: all 0.2s ease-in-out;
   }
@@ -115,12 +115,12 @@
   @include m.md {
     width: 100%;
     height: 100px;
-    background-color: rgba(235, 235, 235, 0.103);
+    background-color: v.$tran;
   }
   @include m.lg {
     width: 100%;
     height: 100px;
-    background-color: rgba(235, 235, 235, 0.103);
+    background-color: v.$tran;
   }
   ul {
     @include m.md {
@@ -148,7 +148,7 @@
         @include m.md {
           display: block;
           text-decoration: none;
-          color: white;
+          color: v.$white;
           font-size: 30px;
           padding: 25px;
           &:hover {
@@ -158,7 +158,7 @@
         @include m.lg {
           display: block;
           text-decoration: none;
-          color: white;
+          color: v.$white;
           font-size: 30px;
           padding: 25px;
           &:hover {
@@ -178,7 +178,7 @@ main {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  color: white;
+  color: v.$white;
   padding-top: 300px;
   .nature-header {
     margin-left: 30px;
@@ -213,16 +213,16 @@ main {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    color: rgb(255, 255, 255);
+    color: v.$white;
     width: 30px;
     height: 30px;
     @include m.md {
       transform: translateY(85vh);
-      color: rgb(255, 255, 255);
+      color: v.$white;
     }
     @include m.lg {
       transform: translateY(85vh);
-      color: rgb(255, 255, 255);
+      color: v.$white;
     }
   }
 }
