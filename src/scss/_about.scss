@@ -10,94 +10,103 @@
     justify-content: space-around;
     flex-flow: wrap;
   }
-  @include m.lg{
+  @include m.lg {
     width: 90%;
     margin: 0 auto;
-    display: flex; 
+    display: flex;
     flex-direction: row;
     justify-content: space-around;
     flex-flow: wrap;
   }
-        h3 {
-          @include m.sm{
-            flex-wrap: nowrap;
-          }
-            text-align: center;
-            font-size: 25px;
-            padding: 30px;
-        }
-        img {
-            max-width: 300px;
-            border-radius: 50%;
-            box-shadow: 0 0 30px rgb(75, 75, 75);
-
-        }
-}      
+  h3 {
+    text-align: center;
+    font-size: 25px;
+    padding: 30px;
+  }
+  img {
+    max-width: 300px;
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgb(75, 75, 75);
+  }
+}
 
 #laget {
-    text-align: center;
-    font-size: 45px;
-    padding-top: 20px;
-    padding-bottom: 50px;
-    @include m.sm{
-        font-size: 30px;
-      }
-      @include m.md{
-        font-size: 30px;
-      }
-      @include m.lg{
-        font-size: 30px;
-      }
+  text-align: center;
+  font-size: 45px;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  @include m.md {
+    font-size: 30px;
+  }
+  @include m.lg {
+    font-size: 30px;
+  }
 }
 
 figure {
   text-align: center;
-
 }
 
 .card {
-  @include m.sm{
+  @include m.sm {
     width: 100%;
   }
-  @include m.md{
+  @include m.md {
     width: 50%;
   }
-  @include m.lg{
+  @include m.lg {
     width: 50%;
   }
 }
 
-
-
 figure {
-    padding-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 figcaption {
+  background-color: rgba(219, 219, 219, 0.877);
+  width: 350px;
+  height: 150px;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 20px;
+  font-size: 20px;
+  @include m.md {
     background-color: rgba(219, 219, 219, 0.877);
-    width: 350px;
-    height: 150px;
+    width: 550px;
+    height: 125px;
     border-radius: 10px;
     margin: 0 auto;
-    padding: 15px;
+    padding: 20px;
     font-size: 20px;
-        .quote {
-            height: 50px;
-            width: 50px;
-            transform: scale(-1, -1);
-        }
-      
-    }
+  }
+  @include m.lg {
+  }
+  .quote {
+    height: 50px;
+    width: 50px;
+    transform: scale(-1, -1);
+  }
+}
 
-    .icon2 {
-        transform: translateY(-5px);
-        text-align: center;
-        .arrow2 {
-            color: white;
-            width: 30px;
-            height: 30px;
-            filter: invert(100%);
-        
-        }
-    }
+#lasse {
+  @include m.md {
+    width: 350px;
+  }
+  @include m.lg {
+    width: 350px;
+  }
+}
 
+.icon2 {
+  transform: translateY(-10px);
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 15px;
+  .arrow2 {
+    color: white;
+    width: 30px;
+    height: 30px;
+    filter: invert(100%);
+  }
+}
