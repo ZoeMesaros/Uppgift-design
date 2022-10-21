@@ -2,103 +2,97 @@
 @use "breakpoint" as m;
 
 #contact {
+  display: flex;
+  flex-direction: column;
+  padding-left: 25%;
+  padding-top: 70px;
+  width: 100%;
+  height: 590px;
+  background-color: black;
+  color: white;
+  font-size: 25px;
+  @include m.md {
     display: flex;
-    flex-direction: column;
-    padding-left: 25%;
-    padding-top: 70px;
+    flex-direction: row;
+    justify-content: space-around;
     width: 100%;
-    height: 590px;
+    height: 25vh;
     background-color: black;
     color: white;
     font-size: 25px;
-    @include m.md{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        width: 100%;
-        height: 25vh;
-        background-color: black;
-        color: white;
-        font-size: 25px;
-        padding-left: 100px;
-        padding-right: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  @include m.lg {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    height: 25vh;
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  .company {
+    list-style: none;
+    line-height: 1.6;
+    padding-bottom: 30px;
+    @include m.md {
+      padding-top: 20px;
+      font-size: 20px;
     }
-    @include m.lg{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        width: 100%;
-        height: 25vh;
-        background-color: black;
-        color: white;
-        font-size: 25px;
-        padding-left: 100px;
-        padding-right: 100px;
+    @include m.lg {
+      padding-top: 20px;
+      font-size: 20px;
     }
-    .company {
-        list-style: none;
-        line-height: 1.6;
-        padding-bottom: 30px;
-        @include m.md{
-            padding-top: 20px;
-            font-size: 20px;
-        }
-        @include m.lg{
-            padding-top: 20px;
-            font-size: 20px;
-        }
+  }
+  .c-contact {
+    padding-top: 35px;
+    list-style: none;
+    line-height: 1.6;
+    padding-bottom: 30px;
+    @include m.md {
+      padding-top: 20px;
+      font-size: 20px;
     }
-    .c-contact {
-        padding-top: 35px;
-        list-style: none;
-        line-height: 1.6;
-        padding-bottom: 30px;
-        @include m.md{
-            padding-top: 20px;
-            font-size: 20px;
-        }
-        @include m.lg{
-            padding-top: 20px;
-            font-size: 20px;
-        }
+    @include m.lg {
+      padding-top: 20px;
+      font-size: 20px;
     }
-
-    .social {
-        padding-top: 35px;
-        list-style: none;
-        line-height: 50px;
-        @include m.md{
-            padding-top: 20px;
-            font-size: 20px;
-            transform: translateY(-15px);
-        }
-        @include m.lg{
-            padding-top: 20px;
-            font-size: 20px;
-            transform: translateY(-15px);
-        }
+  }
+  .social {
+    padding-top: 35px;
+    list-style: none;
+    line-height: 50px;
+    @include m.md {
+      padding-top: 20px;
+      font-size: 20px;
+      transform: translateY(-15px);
     }
-
-
-    svg {
-        width: 25px;
-        height: 25px;
-        transform: translateX(-15px);
-        @include m.md{
-            width: 25px;
-            height: 25px;
-            transform: translateX(-15px);
-        }
-        @include m.lg{
-            width: 25px;
-            height: 25px;
-            transform: translateX(-15px);
-        }
-        .facebook {
-            filter: invert(100%);
-        }
-           
+    @include m.lg {
+      padding-top: 20px;
+      font-size: 20px;
+      transform: translateY(-15px);
     }
-    
+  }
+  svg {
+    width: 25px;
+    height: 25px;
+    transform: translateX(-15px);
+    @include m.md {
+      width: 25px;
+      height: 25px;
+      transform: translateX(-15px);
+    }
+    @include m.lg {
+      width: 25px;
+      height: 25px;
+      transform: translateX(-15px);
+    }
+    .facebook {
+      filter: invert(100%);
+    }
+  }
 }
-

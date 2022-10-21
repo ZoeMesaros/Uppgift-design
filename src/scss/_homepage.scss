@@ -15,11 +15,68 @@ html {
   background-repeat: no-repeat;
 }
 
-.side-menu {
+.top-nav {
+  @include m.md {
+    width: 100%;
+    height: 100px;
+    background-color: v.$tran;
+  }
+  @include m.lg {
+    width: 100%;
+    height: 100px;
+    background-color: v.$tran;
+  }
+  ul {
+    @include m.md {
+      text-align: right;
+      padding-right: 25px;
+    }
+    @include m.lg {
+      text-align: right;
+      padding-right: 25px;
+    }
+    li {
+      @include m.md {
+        list-style: none;
+        padding-top: 5px;
+        display: inline-block;
+      }
+      @include m.lg {
+        list-style: none;
+        padding-top: 5px;
+        display: inline-block;
+      }
+      a {
+        display: none;
+        @include m.md {
+          display: block;
+          text-decoration: none;
+          color: v.$white;
+          font-size: 30px;
+          padding: 25px;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+        @include m.lg {
+          display: block;
+          text-decoration: none;
+          color: v.$white;
+          font-size: 30px;
+          padding: 25px;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+.side {
   #toggle {
     display: none;
   }
-
   .hamburger {
     position: absolute;
     top: 5em;
@@ -30,7 +87,6 @@ html {
     height: 45px;
     z-index: 5;
   }
-
   .hamburger div {
     position: relative;
     width: 3em;
@@ -40,7 +96,6 @@ html {
     margin-top: 8px;
     transition: all 0.3s ease-in-out;
   }
-
   .nav {
     position: absolute;
     width: 100%;
@@ -71,9 +126,9 @@ html {
     margin-top: 70px;
   }
   nav a {
-    position: relative;
     text-decoration: none;
     color: v.$white;
+    position: relative;
     font-size: 1.5em;
     margin-top: 1.25em;
     transition: color 0.2s ease-in-out;
@@ -115,64 +170,7 @@ html {
   }
 }
 
-.top-nav {
-  @include m.md {
-    width: 100%;
-    height: 100px;
-    background-color: v.$tran;
-  }
-  @include m.lg {
-    width: 100%;
-    height: 100px;
-    background-color: v.$tran;
-  }
-  ul {
-    @include m.md {
-      text-align: right;
-      padding-right: 25px;
-    }
-    @include m.lg {
-      text-align: right;
-      padding-right: 25px;
-    }
-    li {
-      @include m.md {
-        list-style: none;
-        padding-top: 5px;
-        display: inline-block;
-      }
-      @include m.lg {
-        list-style: none;
-        padding-top: 5px;
-        display: inline-block;
-      }
 
-      a {
-        display: none;
-        @include m.md {
-          display: block;
-          text-decoration: none;
-          color: v.$white;
-          font-size: 30px;
-          padding: 25px;
-          &:hover {
-            text-decoration: underline;
-          }
-        }
-        @include m.lg {
-          display: block;
-          text-decoration: none;
-          color: v.$white;
-          font-size: 30px;
-          padding: 25px;
-          &:hover {
-            text-decoration: underline;
-          }
-        }
-      }
-    }
-  }
-}
 
 main {
   width: 100%;
