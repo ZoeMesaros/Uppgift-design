@@ -1,71 +1,49 @@
 @use "variables" as v;
-@use "breakpoint" as m;
+@use "mixins" as m;
 
 html {
   scroll-behavior: smooth;
 }
 
 #home {
-  min-height: 100vh;
-  width: 100%;
-  background: url(/src/img/negative-space-black-forest-dawn.jpg);
-  background-position: center center;
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
+  @include m.background;
 }
 
 .top-nav {
   @include m.md {
-    width: 100%;
-    height: 100px;
-    background-color: v.$tran;
+    @include m.top-nav;
   }
   @include m.lg {
-    width: 100%;
-    height: 100px;
-    background-color: v.$tran;
+    @include m.top-nav;
   }
   ul {
     @include m.md {
-      text-align: right;
-      padding-right: 25px;
+      @include m.ul;
     }
     @include m.lg {
-      text-align: right;
-      padding-right: 25px;
+      @include m.ul;
     }
     li {
       @include m.md {
-        list-style: none;
-        padding-top: 5px;
-        display: inline-block;
+        @include m.list;
       }
       @include m.lg {
-        list-style: none;
-        padding-top: 5px;
-        display: inline-block;
+        @include m.list;
       }
       a {
         display: none;
         @include m.md {
-          display: block;
-          text-decoration: none;
-          color: v.$white;
-          font-size: 30px;
-          padding: 25px;
-          &:hover {
-            text-decoration: underline;
+          @include m.a {
+            &:hover {
+              text-decoration: underline;
+            }
           }
         }
         @include m.lg {
-          display: block;
-          text-decoration: none;
-          color: v.$white;
-          font-size: 30px;
-          padding: 25px;
-          &:hover {
-            text-decoration: underline;
+          @include m.a {
+            &:hover {
+              text-decoration: underline;
+            }
           }
         }
       }
@@ -74,8 +52,11 @@ html {
 }
 
 .side {
-  #toggle {
-    display: none;
+  &__background {
+    width: 100%;
+    height: 80px;
+    transform: translateY(-60px);
+    background-color: v.$grey;
   }
   .hamburger {
     position: absolute;
@@ -86,15 +67,15 @@ html {
     width: 2em;
     height: 45px;
     z-index: 5;
-  }
-  .hamburger div {
-    position: relative;
-    width: 3em;
-    height: 7px;
-    border-radius: 3px;
-    background-color: v.$white;
-    margin-top: 8px;
-    transition: all 0.3s ease-in-out;
+    div {
+      position: relative;
+      width: 3em;
+      height: 7px;
+      border-radius: 3px;
+      background-color: v.$white;
+      margin-top: 8px;
+      transition: all 0.3s ease-in-out;
+    }
   }
   .nav {
     position: absolute;
@@ -108,42 +89,39 @@ html {
     overflow: hidden;
     transition: all 0.3s ease-in-out;
     transform: scale(0);
-  }
-  .nav-background {
-    width: 100%;
-    height: 80px;
-    transform: translateY(-60px);
-    background-color: v.$grey;
-  }
-  .nav-wrapper {
-    position: relative;
-    overflow: hidden;
-    overflow-y: auto;
-    height: 100%;
-  }
-  nav {
-    text-align: center;
-    margin-top: 70px;
-  }
-  nav a {
-    text-decoration: none;
-    color: v.$white;
-    position: relative;
-    font-size: 1.5em;
-    margin-top: 1.25em;
-    transition: color 0.2s ease-in-out;
-    letter-spacing: 1px;
-  }
-  nav a:before {
-    content: "";
-    height: 0;
-    position: absolute;
-    width: 0.25em;
-    background-color: v.$white;
-    left: -0.5em;
-    transition: all 0.2s ease-in-out;
+    &__wrapper {
+      position: relative;
+      overflow: hidden;
+      overflow-y: auto;
+      height: 100%;
+      nav {
+        text-align: v.$mid;
+        margin-top: 70px;
+        a {
+          text-decoration: none;
+          color: v.$white;
+          position: relative;
+          font-size: 1.5em;
+          margin-top: 1.25em;
+          transition: color 0.2s ease-in-out;
+          letter-spacing: 1px;
+          a:before {
+            content: "";
+            height: 0;
+            position: absolute;
+            width: 0.25em;
+            background-color: v.$white;
+            left: -0.5em;
+            transition: all 0.2s ease-in-out;
+          }
+        }
+      }
+    }
   }
 
+  #toggle {
+    display: none;
+  }
   #toggle:checked + .hamburger .top-bun {
     transform: rotate(-45deg);
     margin-top: 25px;
@@ -156,12 +134,10 @@ html {
     transform: rotate(45deg);
     margin-top: -7px;
   }
-
   #toggle:checked + .hamburger + .nav {
     top: 0;
     transform: scale(1);
   }
-
   @include m.md {
     display: none;
   }
@@ -170,16 +146,14 @@ html {
   }
 }
 
-
-
-main {
+.header {
   width: 100%;
   height: 40%;
   position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: center;
+  justify-content: v.$mid;
+  text-align: v.$mid;
   color: v.$white;
   padding-top: 300px;
   @include m.md {
@@ -188,42 +162,40 @@ main {
   @include m.lg {
     height: 60%;
   }
-  .nature-header {
+  &__nature {
     margin-left: 25px;
     margin-right: 25px;
     letter-spacing: 1px;
     font-size: 35px;
   }
-  .text1 {
+  &__text1 {
     margin-left: 15px;
     margin-right: 15px;
     word-spacing: 5px;
     padding: 50px;
-    font-weight: lighter;
-    font-size: 28px;
+    @include m.text;
   }
-  .text2 {
+  &__text2 {
     margin-left: 25px;
     margin-right: 25px;
     word-spacing: 5px;
     padding: 5px;
-    font-weight: lighter;
-    font-size: 28px;
+    @include m.text;
   }
 }
 
 .icon {
-  width: 100%;
-  text-align: center;
+  @include m.icon {
+    width: 100%;
+  }
   .arrow {
-    transform: translateY(75vh);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    color: v.$white;
-    width: 30px;
-    height: 30px;
+    @include m.arrow {
+      transform: translateY(75vh);
+      display: flex;
+      justify-content: v.$mid;
+      align-items: v.$mid;
+      margin: 0 auto;
+    }
     @include m.md {
       transform: translateY(85vh);
       color: v.$white;

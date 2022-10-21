@@ -1,1 +1,146 @@
 @use "variables" as v;
+
+//*MEDIA QUERY*\\
+
+@mixin sm {
+  @media (min-width: map-get(v.$breakpoints, "sm")) {
+    @content;
+  }
+}
+@mixin md {
+  @media (min-width: map-get(v.$breakpoints, "md")) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width: map-get(v.$breakpoints, "lg")) {
+    @content;
+  }
+}
+
+//*HOMEPAGE*\\
+
+@mixin background {
+  min-height: 100vh;
+  width: 100%;
+  background: url(/src/img/negative-space-black-forest-dawn.jpg);
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+//*DESKTOP NAV*\\
+
+@mixin top-nav {
+  width: 100%;
+  height: 100px;
+  background-color: v.$tran;
+}
+
+@mixin ul {
+  text-align: right;
+  padding-right: 25px;
+}
+
+@mixin list {
+  list-style: none;
+  padding-top: 5px;
+  display: inline-block;
+}
+
+@mixin a {
+  display: block;
+  text-decoration: none;
+  color: v.$white;
+  font-size: 30px;
+  padding: 25px;
+  @content;
+}
+
+//*MAIN TEXT*\\
+
+@mixin text {
+  font-weight: lighter;
+  font-size: 28px;
+}
+
+//*ARROW ICON*\\
+
+@mixin icon {
+  text-align: center;
+  @content;
+}
+
+@mixin arrow {
+  color: v.$white;
+  width: 30px;
+  height: 30px;
+  @content;
+}
+
+//*ABOUT*\\
+
+@mixin laget {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: wrap;
+}
+
+@mixin header {
+  text-align: v.$mid;
+  font-size: 20px;
+  padding: 30px;
+}
+
+@mixin caption {
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 20px;
+  font-size: 20px;
+  @content;
+}
+
+//*CONTACT*\\
+
+@mixin contact {
+  display: flex;
+  flex-direction: column;
+  padding-left: 25%;
+  padding-top: 70px;
+  width: 100%;
+  height: 590px;
+  background-color: v.$black;
+  color: v.$white;
+  font-size: 25px;
+  @content;
+}
+
+@mixin contact-other {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  height: 25vh;
+  background-color: v.$black;
+  color: v.$white;
+  font-size: 25px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+@mixin contact-style {
+  list-style: none;
+  line-height: 1.6;
+  padding-bottom: 30px;
+  @content;
+}
+
+@mixin contact-desktop {
+  padding-top: 20px;
+  font-size: 20px;
+  @content;
+}

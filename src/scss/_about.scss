@@ -1,8 +1,8 @@
 @use "variables" as v;
-@use "breakpoint" as m;
+@use "mixins" as m;
 
 #about {
-  text-align: center;
+  text-align: v.$mid;
   font-size: 40px;
   padding-top: 20px;
   padding-bottom: 50px;
@@ -15,20 +15,10 @@
 }
 #laget {
   @include m.md {
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-flow: wrap;
+    @include m.laget;
   }
   @include m.lg {
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-flow: wrap;
+    @include m.laget;
   }
   .card {
     @include m.sm {
@@ -41,22 +31,18 @@
       width: 50%;
     }
     &__header {
-      text-align: center;
+      text-align: v.$mid;
       font-size: 25px;
       padding: 30px;
       @include m.md {
-        text-align: center;
-        font-size: 20px;
-        padding: 30px;
+        @include m.header;
       }
       @include m.lg {
-        text-align: center;
-        font-size: 20px;
-        padding: 30px;
+        @include m.header;
       }
     }
     &__container {
-      text-align: center;
+      text-align: v.$mid;
       padding-bottom: 20px;
       &__img {
         max-width: 300px;
@@ -65,21 +51,17 @@
       }
     }
     &__caption {
-      background-color: rgba(219, 219, 219, 0.877);
-      width: 350px;
-      height: 150px;
-      border-radius: 10px;
-      margin: 0 auto;
-      padding: 20px;
-      font-size: 20px;
+      @include m.caption {
+        background-color: v.$grey2;
+        width: 350px;
+        height: 150px;
+      }
       @include m.md {
-        background-color: rgba(219, 219, 219, 0.877);
-        width: 550px;
-        height: 125px;
-        border-radius: 10px;
-        margin: 0 auto;
-        padding: 20px;
-        font-size: 20px;
+        @include m.caption {
+          background-color: v.$grey2;
+          width: 550px;
+          height: 125px;
+        }
       }
       &__quote {
         transform: scale(-1, -1) translateY(-12px) translateX(-5px);
@@ -98,14 +80,14 @@
   }
 }
 .icon2 {
-  transform: translateY(-10px);
-  text-align: center;
-  padding-top: 50px;
-  padding-bottom: 15px;
+  @include m.icon {
+    transform: translateY(-10px);
+    padding-top: 50px;
+    padding-bottom: 15px;
+  }
   .arrow2 {
-    color: white;
-    width: 30px;
-    height: 30px;
-    filter: invert(100%);
+    @include m.arrow {
+      filter: invert(100%);
+    }
   }
 }
